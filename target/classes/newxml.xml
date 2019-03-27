@@ -1,18 +1,15 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<xml>
-    <message sender="Luke Skywalker" timestamp="12">
-        <topic>"droids gift"</topic>
-        <recipient>"Jabba The Hutt"</recipient>
-        <message>"Greetings, Exalted One. Allow me to introduce myself. I am Luke
-            Skywalker, Jedi Knight and friend to Captain Solo. I know that you are
-            powerful, mighty Jabba, and that your anger with Solo must be equally
-            powerful. I seek an audience with Your Greatness to bargain for Solo's
-            life.
-            With your wisdom, I'm sure that we can work out an arrangement which
-            will be mutually beneficial and enable us to avoid any unpleasant
-            confrontation. As a token of my goodwill, I present to you a gift:
-            these two droids."
-        </message>
-        <token>d5f32ac68a</token>
-    </message>
-</xml>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><xml>
+        <message sender="Luke Skywalker" timestamp="12">
+            <topic>"droids gift"</topic>
+            <recipient>"Jabba The Hutt"</recipient>
+            <message>"Greetings, Exalted One. Allow me to introduce myself. I am Luke
+                Skywalker, Jedi Knight and friend to Captain Solo. I know that you are
+                powerful, mighty Jabba, and that your anger with Solo must be equally
+                powerful. I seek an audience with Your Greatness to bargain for Solo's
+                life.
+                With your wisdom, I'm sure that we can work out an arrangement which
+                will be mutually beneficial and enable us to avoid any unpleasant
+                confrontation. As a token of my goodwill, I present to you a gift:
+                these two droids."</message>
+        <token>d5f32ac68a</token></message>
+    </xml>

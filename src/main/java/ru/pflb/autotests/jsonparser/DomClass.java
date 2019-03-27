@@ -24,12 +24,16 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+import static ru.pflb.autotests.jsonparser.XmlToJson.newXmlPath;
+
 public class DomClass {
+    static String iniPath = "src\\main\\resources\\token.ini";
+    static String xmlPath = "src\\main\\resources\\message.xml";
 
     public static void addToken() {
         try {
             DocumentBuilder documentBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
-            Document document = documentBuilder.parse("src\\main\\resources\\message.xml");
+            Document document = documentBuilder.parse(xmlPath);
             tokenCreation(document);
         } catch (ParserConfigurationException e) {
             e.printStackTrace();
@@ -48,7 +52,8 @@ public class DomClass {
     }
 
     public static void tokenCreation(Document document) throws IOException, TransformerException, XPathExpressionException {
-        Wini ini = new Wini(new File("src\\main\\resources\\token.ini"));
+        File file = new File(iniPath);
+        Wini ini = new Wini(file);
         String tokenValue = ini.get("main", "token");
 
         Element token = document.createElement("token");
@@ -66,7 +71,7 @@ public class DomClass {
     private static void writeDocument(Document document) throws TransformerException, FileNotFoundException {
         Transformer tr = TransformerFactory.newInstance().newTransformer();
         DOMSource source = new DOMSource(document);
-        FileOutputStream fos = new FileOutputStream("src\\main\\resources\\newxml.xml");
+        FileOutputStream fos = new FileOutputStream(newXmlPath);
         StreamResult result = new StreamResult(fos);
         tr.transform(source, result);
     }

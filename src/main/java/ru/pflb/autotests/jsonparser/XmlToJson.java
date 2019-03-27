@@ -8,19 +8,23 @@ import java.io.File;
 import java.io.IOException;
 
 public class XmlToJson {
+    static String newXmlPath = "src\\main\\resources\\newxml.xml";
+    static String jsonPath = "src\\main\\resources\\test.json";
 
-    public static void xmlToJson(){
-
+    public static void xmlToJson() {
         XmlMapper xmlMapper = new XmlMapper();
         try {
-            JsonNode node = xmlMapper.readTree(new File("src\\main\\resources\\newxml.xml"));
-
+            File nodeFile = new File(newXmlPath);
+            JsonNode node = xmlMapper.readTree(nodeFile);
             ObjectMapper jsonMapper = new ObjectMapper();
-            jsonMapper.writeValue(new File("src\\main\\resources\\test.json"), node);
+            jsonMapper.writeValue(new File(jsonPath), node);
 
         } catch (IOException e) {
             e.printStackTrace();
-
+        }
+        File file = new File(newXmlPath);
+        if (file.isFile()) {
+            file.delete();
         }
 
     }
